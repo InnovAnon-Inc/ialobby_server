@@ -14,6 +14,6 @@ This software is proprietary and confidential to InnovAnon, Inc., and is not fre
 
 By using, modifying, deploying, or redistributing the software, designated entities acknowledge and agree to comply with the terms of this custom licensing agreement.
 
-For any questions or inquiries regarding the use, modification, deployment, or redistribution of the software, designated entities are encouraged to contact InnovAnon-Inc@gmx.com +1 (801) 448-7855.
+For any questions or inquiries regarding the use, modification, deployment, or redistribution of the software, designated entities are encouraged to contact [InnovAnon-Inc@gmx.com](mailto:InnovAnon-Inc@gmx.com) [+1 (801) 448-7855](tel:18014487855).
 
 
