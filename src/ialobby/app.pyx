@@ -76,7 +76,7 @@ def handle_player_move(data):
 # Additional event handlers and logic for game table interactions can be added as needed
 
 def main() -> None:
-    socketio.run(app, allow_unsafe_werkzeug=True)
+    socketio.run(app, allow_unsafe_werkzeug=True, host="0.0.0.0")
 
 __author__    :str = "YouChat"
 __copyright__ :str = "Copyright 2024, InnovAnon, Inc."
