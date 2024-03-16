@@ -30,6 +30,11 @@ lobby        :Lobby          = Lobby(tf)
 #@typechecked
 @socketio.on('connect')
 def handle_connect():
+    game     :str            = authenticator.get_game()
+    return game
+
+@socketio.on('login')
+def handle_logi():
     # Logic to handle user connection and authentication using Supabase
     username :str            = ...
     secret   :str            = ...

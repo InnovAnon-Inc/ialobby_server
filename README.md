@@ -8,6 +8,9 @@ IA Game Lobby Backend
 
 ## Modules
 
+- app: Controller
+  * Easily run a game as a standalone client-server application
+
 - auth: Authentication
   * Generic API
   * Supabase-specific reference implementation
@@ -25,9 +28,6 @@ IA Game Lobby Backend
 
 - lobby: Core Functionality
   * Manage tables
-
-- main: Controller
-  * Easily run a game as a standalone client-server application
 
 - table: Core Functionality
   * Generic API
