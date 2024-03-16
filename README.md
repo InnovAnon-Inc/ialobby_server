@@ -1,3 +1,5 @@
+ABANDONED: FUCK CORS
+
 # IA Lobby (Server)
 IA Game Lobby Backend
 ==========
