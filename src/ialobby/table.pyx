@@ -14,16 +14,16 @@ from typing import Dict, Optional
 from dataclasses import dataclass
 #from flask_socketio import rooms
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from overrides import override
+#from overrides import override
 from structlog import get_logger
-from typeguard import typechecked
+#from typeguard import typechecked
 
-from db import User
-from game import GameFactory, Player
+from .db import User
+from .game import GameFactory, Player
 
 logger = get_logger()
 
-@typechecked
+#@typechecked
 class Table:
     """ Manage Players and Game """
 
@@ -99,7 +99,7 @@ class Table:
         self.game                         = self.factory.new_game(self.players.values())
         return True
 
-@typechecked
+#@typechecked
 class SocketIOTable(Table):
     """ Flask_SocketIO-specific Table """
 
@@ -107,28 +107,28 @@ class SocketIOTable(Table):
         super().__init__(room_name)
         self.socketio:SocketIO = socketio
 
-    @override
+    #@override
     def join(self, user:User) -> bool:
         if not super().join(user):
             return False
         self.socketio.enter_room(user, self.room_name)
         return True
 
-    @override
+    #@override
     def part(self, user:User) -> bool:
         if not super().part(user):
             return False
         self.socketio.leave_room(user, self.room_name)
         return True
 
-    @override
+    #@override
     def destroy(self) -> bool:
         if not super().destroy():
             return False
         self.socketio.emit('table_destroyed', room=self.room_name)
         return True
 
-@typechecked
+#@typechecked
 class TableFactory(ABC):
     """ Abstract Table-creation from Lobby """
 
@@ -138,14 +138,14 @@ class TableFactory(ABC):
 
         raise NotImplementedError
 
-@typechecked
+#@typechecked
 @dataclass
 class SocketIOTableFactory(TableFactory):
     """ Flask_SocketIO-specific TableFactory """
 
     socketio:SocketIO
 
-    @override
+    #@override
     def new_table(self, room_name:str) -> Table:
         return SocketIOTable(room_name, self.socketio)
 

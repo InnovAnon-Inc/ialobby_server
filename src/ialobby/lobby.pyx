@@ -12,15 +12,15 @@ from typing import Dict, Optional
 
 from dataclasses import dataclass
 from structlog import get_logger
-from typeguard import typechecked
+#from typeguard import typechecked
 from uuid import uuid4
 
-from db import User
-from table import TableFactory, Table
+from .db import User
+from .table import TableFactory, Table
 
 logger = get_logger()
 
-@typechecked
+#@typechecked
 class Lobby:
     """ Manage Tables """
 

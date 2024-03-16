@@ -10,9 +10,9 @@ Map from DB Responses to Python objects
 from typing import Any, Dict, Optional
 
 from dataclasses import dataclass
-from typeguard import typechecked
+#from typeguard import typechecked
 
-@typechecked
+#@typechecked
 @dataclass
 class User:
     """
@@ -36,7 +36,7 @@ class User:
         used_invites   :int           = data['used_invites']
         return User(user_id, name, invite_count, unclaimed_codes, used_invites)
 
-@typechecked
+#@typechecked
 @dataclass
 class Game:
     """
@@ -60,7 +60,7 @@ class Game:
         image          :Optional[str] = data['image']
         return Game(game_id, name, url, description, image)
 
-@typechecked
+#@typechecked
 @dataclass
 class Code:
     """
@@ -82,7 +82,7 @@ class Code:
         secret         :str           = data['secret']
         return Code(user_id, game_id, remaining, secret)
 
-@typechecked
+#@typechecked
 @dataclass
 class Badge: # not used
     """ Botze-specific Accomplishments """
@@ -98,7 +98,7 @@ class Badge: # not used
         badge_name     :str           = data['name']
         return Badge(badge_id, badge_name)
 
-@typechecked
+#@typechecked
 @dataclass
 class UserBadgeLink: # not used
     """ User-Badge Granting """

@@ -9,12 +9,12 @@ Entrypoint
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from structlog import get_logger
-from typeguard import typechecked
+#from typeguard import typechecked
 
-from auth import Authentication, Authenticator, SupabaseIntegration
-from conf import config
-from lobby import Lobby
-from table import TableFactory, SocketIOTableFactory
+from .auth import Authentication, Authenticator, SupabaseIntegration
+from .conf import config
+from .lobby import Lobby
+from .table import TableFactory, SocketIOTableFactory
 
 logger                       = get_logger()
 
@@ -27,7 +27,7 @@ authenticator:Authenticator  = SupabaseIntegration(config.supabase_url, config.s
 tf           :TableFactory   = SocketIOTableFactory(socketio)
 lobby        :Lobby          = Lobby(tf)
 
-@typechecked
+#@typechecked
 @socketio.on('connect')
 def handle_connect():
     # Logic to handle user connection and authentication using Supabase
@@ -49,7 +49,7 @@ def handle_connect():
 #    # Validate user's access and join the lobby
 
 # TODO disconnect
-@typechecked
+#@typechecked
 @socketio.on('leave_lobby')
 def handle_leave_lobby(data):
     # Logic to handle user leaving the game lobby
@@ -61,7 +61,7 @@ def handle_leave_lobby(data):
 # TODO leave table
 # TODO create table
 
-@typechecked
+#@typechecked
 @socketio.on('player_move')
 def handle_player_move(data):
     # Logic to process and handle a player's move within a specific game table
@@ -70,7 +70,7 @@ def handle_player_move(data):
 
 # Additional event handlers and logic for game table interactions can be added as needed
 
-if __name__ == '__main__':
+def main() -> None:
     socketio.run(app, allow_unsafe_werkzeug=True)
 
 __author__    :str = "YouChat"

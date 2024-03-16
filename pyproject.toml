@@ -17,14 +17,14 @@ dependencies = [
   "dataclasses",
   "flask",
   "flask_socketio",
-  "overrides",
+  #"overrides",
   "rich",
   "structlog",
   "supabase",
-  "typeguard",
+  #"typeguard",
 ]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.8"
 authors = [
     {name = "Innovations Anonymous", email = "InnovAnon-Inc@gmx.com"},
 ]
@@ -41,9 +41,9 @@ authors = [
 #  "cython-dev-tools",
 #  "hypothesis",
 #]
-rel = [
-  "twine",
-]
+#rel = [
+#  "twine",
+#]
 
 [tool.setuptools_scm]
 version_file = "src/ialobby/_version.pyx"

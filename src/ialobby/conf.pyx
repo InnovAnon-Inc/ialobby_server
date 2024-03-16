@@ -8,7 +8,7 @@ Configuration Module
 
 from argparse import Namespace
 from configargparse import ArgumentParser
-from typeguard import typechecked
+#from typeguard import typechecked
 
 # Initialize a parser with default values and configuration file support
 parser:ArgumentParser = ArgumentParser(default_config_files=['config.ini', '.env'])
@@ -16,7 +16,7 @@ parser.add_argument('--supabase_url', type=str, env_var='SUPABASE_URL', help='Su
 parser.add_argument('--supabase_key', type=str, env_var='SUPABASE_KEY', help='Supabase API Key')
 parser.add_argument('--game_name',    type=str, env_var='GAME_NAME',    help='Game Name')
 
-@typechecked
+#@typechecked
 def load_config() -> Namespace:
     """ Load constants and program arguments from command line, environemt, config files """
 

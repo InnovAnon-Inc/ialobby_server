@@ -8,17 +8,17 @@ from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional
 
 from dataclasses import dataclass
-from overrides import override
+#from overrides import override
 from postgrest import APIResponse
 from structlog import get_logger
 from supabase import create_client, Client
-from typeguard import typechecked
+#from typeguard import typechecked
 
-from db import Code, Game, User
+from .db import Code, Game, User
 
 logger                                  = get_logger()
 
-@typechecked
+#@typechecked
 @dataclass
 class Authentication:
     """ (noun) proof that somebody is a particular person """
@@ -36,7 +36,7 @@ class Authentication:
             return False
         return self.code.remaining > 0
 
-@typechecked
+#@typechecked
 class Authenticator(ABC):
     """
     (noun) a person or thing that retrieves Authentication.
@@ -81,7 +81,7 @@ class Authenticator(ABC):
         code       :Optional[Code]      = self.get_code(user, secret)
         return Authentication(user, code)
 
-@typechecked
+#@typechecked
 class SupabaseIntegration(Authenticator):
     """ Supbase-specific Authenticator """
 
@@ -90,7 +90,7 @@ class SupabaseIntegration(Authenticator):
         self.game     :Optional[Game]      = None
         self.game_name:str                 = game_name
 
-    @override
+    #@override
     def get_game(self) -> Game:
         if self.game is not None:
             return self.game
@@ -104,7 +104,7 @@ class SupabaseIntegration(Authenticator):
         self.game     :Game                = Game.from_response(data00)
         return self.game
 
-    @override
+    #@override
     def get_user(self, username:str) -> Optional[User]:
         response      :APIResponse         = self.client.table('user').select('*').eq('name', username).execute()
 
@@ -116,7 +116,7 @@ class SupabaseIntegration(Authenticator):
         user          :User                = User.from_response(data00)
         return user
 
-    @override
+    #@override
     def get_code(self, user:User, secret:str) -> Optional[Code]:
         game          :Game                = self.get_game()
         response1     :APIResponse         = self.client.table('code').select('*').eq('user_id', user.id).eq('game_id', game.id).eq('secret', secret).execute()

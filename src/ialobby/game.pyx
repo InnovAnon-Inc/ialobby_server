@@ -13,27 +13,27 @@ from typing import Sequence
 
 from dataclasses import dataclass
 from structlog import get_logger
-from typeguard import typechecked
+#from typeguard import typechecked
 
-from db import User
+from .db import User
 
 logger = get_logger()
 
-@typechecked
+#@typechecked
 @dataclass
 class Player(ABC):
     """ Networking- and Game-specific Player objects """
 
     user                :User
 
-@typechecked
+#@typechecked
 @dataclass
 class Move(ABC):
 
     player:Player
     tick  :int
 
-@typechecked
+#@typechecked
 @dataclass
 class Game(ABC):
     """ Common Game metadata """
@@ -41,7 +41,7 @@ class Game(ABC):
     min_players:int
     max_players:int
 
-@typechecked
+#@typechecked
 class GameFactory(ABC):
     """ Abstracts Player- and Game-creation from Table """
    
