@@ -1,40 +1,39 @@
-# IA Lobby
-IA Game Lobby
+# IA Lobby (Server)
+IA Game Lobby (Server)
 ==========
 
 [![Tip Me via PayPal](https://img.shields.io/badge/paypal-donate-FF1100.svg?logo=paypal&logoColor=FF1133&style=plastic)](https://www.paypal.me/InnovAnon)
 
 ----------
 
-- Python backend
-- Typescript frontend
-- Docker
+1) Clone the repo:
 
-----------
+```/bin/bash
 
-Corporate Concerns:
+git clone --recursive --depth=1 https://github.com/InnovAnon-Inc/ialobby.git
+```
 
-1) Fork the repo to the client's corporate server:
+2) Configure your `.env`:
 
-   ```/bin/bash
+```.env
 
-   # TODO
+# URL for your Supabase instance
+supabase_url=https://<subdomain>.supabase.co
 
-   ```
+# API key
+supabase_key=...
 
-2) Fill in the `ADDENDUM.md`:
-   - replace `[Employer's Name]`
-   - replace `[Date]`
+# Name of this game in your Supabase database
+game_name=<Rock Pepe Scissors>
+```
 
-3) GPG-sign the `ADDENDUM.md`:
+3) Run the script:
 
-   ```/bin/bash
+```/bin/bash
 
-   # TODO
+./run.sh
 
-   ```
-
-4) Provide free updates on a best effort basis :)
+```
 
 ----------
 
