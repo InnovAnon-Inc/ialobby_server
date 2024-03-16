@@ -19,7 +19,7 @@ IA Game Lobby Backend
   * ConfigArgParse
 
 - game: Interchangeable Business Logic
-  * Support 1 or more players
+  * Support one or more players
   * Support dynamically adding/removing players
   * Support turn-based and real-time games
 
