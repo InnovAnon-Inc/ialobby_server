@@ -92,6 +92,8 @@ class SupabaseIntegration(Authenticator):
 
     #@override
     def get_game(self) -> Game:
+        logger.debug('SupabaseIntegration.get_game()')
+
         if self.game is not None:
             return self.game
 
