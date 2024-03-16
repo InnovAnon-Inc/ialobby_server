@@ -1,0 +1,31 @@
+{
+  "name": "ialobby",
+  "version": "1.0.0",
+  "description": "IA Game Lobby Client",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "npm run lint",
+    "webpack": "webpack --config config/webpack.config.js",
+    "tsc": "tsc -p .",
+    "uglify": "jsmin --output dist/bundle.js dist/bundle.js",
+    "prestart": "npm run build",
+    "start": "live-server --watch=dist",
+    "postinstall": "typings install",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "build": "npm run tsc && npm run uglify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InnovAnon-Inc/ialobby.git"
+  },
+  "author": "Innovations Anonymous",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InnovAnon-Inc/ialobby/issues"
+  },
+  "homepage": "https://github.com/InnovAnon-Inc/ialobby#readme",
+  "dependencies": {
+    "phaser": "^3.80.1",
+    "typescript": "^5.4.2"
+  }
+}
