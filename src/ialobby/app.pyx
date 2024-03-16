@@ -13,6 +13,7 @@ from structlog import get_logger
 
 from .auth import Authentication, Authenticator, SupabaseIntegration
 from .conf import config
+from .db import Game
 from .lobby import Lobby
 from .table import TableFactory, SocketIOTableFactory
 
@@ -30,8 +31,8 @@ lobby        :Lobby          = Lobby(tf)
 #@typechecked
 @socketio.on('connect')
 def handle_connect():
-    game     :str            = authenticator.get_game()
-    return game
+    game     :Game           = authenticator.get_game()
+    return game # TODO json
 
 @socketio.on('login')
 def handle_logi():
